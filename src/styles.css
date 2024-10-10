@@ -4,9 +4,216 @@
   box-sizing: border-box;
 }
 
-html,
+html {
+  font-size: 64.5%;
+  height: 100%;
+}
+
 body {
-  min-height: 100%;
+  min-height: 100vh;
   width: 100vw;
   overflow-x: hidden;
+  background: #fff8e8;
+  font-family: "Open Sans", sans-serif;
+  display: flex;
+  flex-direction: column;
+}
+
+header {
+  border-bottom: 0.5px solid #4a4a4a;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+footer {
+  text-align: center;
+  font-size: 1.6em;
+  margin: 10px 0;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+  max-width: 700px;
+}
+
+.nav--buttons {
+  padding-right: 20px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.logo {
+  width: 100px;
+  margin-right: auto;
+}
+
+.nav--buttons button {
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  font-size: 1.5em;
+  color: #4a4a4a;
+  font-weight: 500;
+  font-family: "Noto Sans JP", sans-serif;
+  transition: 0.2s all;
+}
+
+.nav--buttons button:hover {
+  color: #d9453d;
+  border-bottom: 1px solid #d9453d;
+}
+
+#content {
+  display: flex;
+  flex-grow: 1;
+}
+
+.homeContainer {
+  flex-grow: 1;
+  padding-top: 25px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.homeImage {
+  width: 90%;
+  border-radius: 8px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
+    rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+  max-width: 1200px;
+}
+
+.nav--buttons .active {
+  color: #d9453d;
+  border-bottom: 1px solid #d9453d;
+}
+
+.underline {
+  border-bottom: 1px solid #d9453d;
+  font-family: "Noto Sans JP", sans-serif;
+}
+
+.homeWelcome {
+  color: #2d232e;
+  margin-top: 20px;
+  font-size: 1.8em;
+}
+
+.subWelcome {
+  margin-top: 5px;
+  font-size: 1.2em;
+  font-weight: 500;
+}
+
+.homeHeroCont {
+  display: grid;
+  grid-template-columns: 1fr 0.7fr;
+  width: 100%;
+  margin-bottom: 50px;
+}
+
+.homeHeroImg {
+  height: 150px;
+}
+
+.aboutImg {
+  width: 180px;
+}
+
+.homeAboutHero,
+.homeMenuHero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+}
+
+.heroBtns {
+  border: none;
+  background-color: #2d232e;
+  padding: 5px 10px;
+  color: #fff8e8;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: 0.2s all;
+}
+
+.heroBtns:hover {
+  color: #2d232e;
+  background-color: #d9453d;
+  transform: scale(1.1);
+  font-weight: bold;
+}
+
+.menuBtn {
+  margin-right: 10px;
+}
+
+@media screen and (min-width: 770px) {
+  .logo {
+    width: 120px;
+  }
+
+  .nav--buttons button {
+    font-size: 1.7em;
+  }
+
+  .homeWelcome {
+    font-size: 2em;
+  }
+
+  .subWelcome {
+    font-size: 1.7em;
+  }
+
+  .homeHeroCont {
+    margin-top: 40px;
+  }
+
+  .homeHeroImg {
+    height: 200px;
+  }
+
+  .aboutImg {
+    width: 230px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .logo {
+    width: 140px;
+  }
+
+  .nav--buttons button {
+    font-size: 1.9em;
+  }
+
+  .homeWelcome {
+    font-size: 3em;
+    margin-top: 50px;
+  }
+
+  .subWelcome {
+    font-size: 1.9em;
+  }
+
+  .homeHeroImg {
+    height: 220px;
+  }
+
+  .aboutImg {
+    width: 250px;
+  }
+
+  .heroBtns {
+    padding: 10px 15px;
+    font-size: 1.5em;
+  }
 }
