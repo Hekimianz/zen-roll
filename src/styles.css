@@ -71,6 +71,8 @@ nav {
 #content {
   display: flex;
   flex-grow: 1;
+  align-items: center;
+  justify-content: center;
 }
 
 .homeContainer {
@@ -99,6 +101,8 @@ nav {
   font-family: "Noto Sans JP", sans-serif;
 }
 
+/* home */
+
 .homeWelcome {
   color: #2d232e;
   margin-top: 20px;
@@ -115,15 +119,21 @@ nav {
   display: grid;
   grid-template-columns: 1fr 0.7fr;
   width: 100%;
-  margin-bottom: 50px;
+  margin: 50px 0;
 }
 
 .homeHeroImg {
   height: 150px;
 }
 
+.aboutBtnImg,
 .aboutImg {
   width: 180px;
+}
+
+.aboutImg {
+  height: 270px;
+  object-fit: cover;
 }
 
 .homeAboutHero,
@@ -156,6 +166,93 @@ nav {
   margin-right: 10px;
 }
 
+/* about */
+
+.aboutContainer {
+  display: grid;
+  grid-template-columns: 1fr;
+  padding: 25px;
+  padding-top: 0;
+  width: 100%;
+  justify-items: center;
+}
+
+.aboutImg {
+  border-radius: 8px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
+    rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+  margin-top: 25px;
+}
+
+.aboutText {
+  margin-top: 25px;
+  font-size: 1.5em;
+  color: #2d232e;
+  font-weight: 500;
+  text-align: center;
+  border-bottom: 1px solid #2d232e;
+  padding-bottom: 50px;
+}
+
+.aboutText:last-of-type {
+  border: none;
+  padding: 0;
+}
+
+/* menu */
+
+.menuContainer {
+  display: grid;
+  width: 100%;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  grid-template-areas:
+    "rolls sashimi"
+    "specials specials";
+  padding: 25px;
+  gap: 25px;
+  max-width: 800px;
+}
+
+.rollsCont {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-area: rolls;
+  width: 100%;
+  gap: 10px;
+  justify-items: center;
+  align-items: center;
+  border-right: 1px solid #2d232e;
+  padding-right: 25px;
+}
+
+.sashimiCont {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-area: sashimi;
+  width: 100%;
+  gap: 10px;
+  justify-items: center;
+  align-items: center;
+}
+
+.specialsCont {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-area: specials;
+  width: 100%;
+  justify-items: center;
+  align-items: center;
+  border-top: 1px solid #2d232e;
+}
+
+.menuHead {
+  color: #2d232e;
+  font-size: 1.7em;
+  grid-column: span 2;
+  width: 100%;
+}
+
 @media screen and (min-width: 770px) {
   .logo {
     width: 120px;
@@ -184,6 +281,18 @@ nav {
   .aboutImg {
     width: 230px;
   }
+
+  .menuContainer {
+    gap: 50px;
+  }
+
+  .menuHead {
+    font-size: 2em;
+  }
+
+  .itemTitle {
+    font-size: 1.7em;
+  }
 }
 
 @media screen and (min-width: 1200px) {
@@ -208,8 +317,55 @@ nav {
     height: 220px;
   }
 
-  .aboutImg {
+  .aboutContainer {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    align-items: center;
+    grid-template-areas:
+      "img1 text1"
+      "text2 img2"
+      "img3 text3";
+    padding-top: 100px;
+    padding-bottom: 100px;
+  }
+
+  .aboutImg:first-of-type {
+    grid-area: img1;
+  }
+
+  .aboutImg:nth-of-type(2) {
+    grid-area: img2;
+  }
+
+  .aboutImg:nth-of-type(3) {
+    grid-area: img3;
+  }
+
+  .aboutText:first-of-type {
+    grid-area: text1;
+  }
+
+  .aboutText:nth-of-type(2) {
+    grid-area: text2;
+  }
+
+  .aboutText:nth-of-type(3) {
+    grid-area: text3;
+  }
+
+  .aboutText {
+    border: none;
+    font-size: 2em;
+    width: 500px;
+  }
+
+  .aboutBtnImg {
     width: 250px;
+  }
+
+  .aboutImg {
+    width: 500px;
+    height: 500px;
   }
 
   .heroBtns {

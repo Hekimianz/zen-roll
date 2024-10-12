@@ -7,6 +7,22 @@ const homeTab = document.querySelector(".home--tab");
 const aboutTab = document.querySelector(".about--tab");
 const menuTab = document.querySelector(".menu--tab");
 let currentTab = "home";
+addHome(container);
+updateCurrTab();
+
+const aboutBtn = document.querySelector(".aboutBtn");
+const menuBtn = document.querySelector(".menuBtn");
+
+aboutBtn.addEventListener("click", () => {
+  addAbout(container);
+  currentTab = "about";
+  updateCurrTab();
+});
+menuBtn.addEventListener("click", () => {
+  addMenu(container);
+  currentTab = "menu";
+  updateCurrTab();
+});
 
 function updateCurrTab() {
   if (currentTab === "home") {
@@ -41,6 +57,3 @@ menuTab.addEventListener("click", () => {
   currentTab = "menu";
   updateCurrTab();
 });
-
-addHome(container);
-updateCurrTab();
